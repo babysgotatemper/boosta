@@ -1,4 +1,399 @@
-body{
-    background-color: red;
-    height: 101px;
+/*fonts*/
+
+
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700, 800');*/
+@import "_font";
+
+
+
+
+/*colors*/
+
+$footerMain: #323232;
+$footerText: #828282;
+$userGreen: #009688;
+$userOrange: #f16600;
+
+/*sizes*/
+
+$footerItems: 5px 10px 5px 0;
+$userWidth: 360px;
+$userPadding: 20px;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
 }
+
+
+/*
+slider
+*/
+
+.slider {
+    position: relative;
+    text-align: center;
+    margin: 50px auto 90px;
+}
+
+.slider__nav {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -($userWidth / 2);
+    width: $userWidth;
+    height: 40px;
+    background-color: $userGreen;
+    text-align: right;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    button {
+        cursor: pointer;
+        opacity: .7;
+        width: 28px;
+        height: 28px;
+        border: 0 none;
+        border-radius: 5px;
+        background: #fff url(../img/slider-arrows.png) 8px center no-repeat;
+        transition: opacity .5s;
+        outline: none;
+        &.slider__next {
+            background-position: -23px center;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.user {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    vertical-align: top;
+    background-color: #fff;
+    width: $userWidth;
+    height: 250px;
+    margin: 0 15px;
+    display: inline-block;
+    text-align: left;
+    padding: $userPadding;
+    box-sizing: border-box;
+    opacity: .6;
+    transition: opacity .5s;
+    &:nth-child(2) {
+        opacity: 1;
+    }
+}
+
+.user__foto {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.user__info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.user__name {
+    display: inline-block;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: $userOrange;
+    text-transform: capitalize;
+}
+
+.user__rating {
+    font-size: 14px;
+    color: $userGreen;
+}
+
+.user__stars img {
+    opacity: .5;
+    &.active {
+        opacity: 1;
+    }
+}
+
+.user__shopInfo {
+    border: 1px solid $userGreen;
+    border-left: none;
+    border-right: none;
+    padding: 15px 0;
+    font-weight: 600;
+    //    height: 46px;
+}
+
+.user-shopInfo__cats {
+    color: $userGreen;
+    float: right;
+}
+
+.user__btn {
+    position: absolute;
+    bottom: $userPadding;
+    right: $userPadding;
+    cursor: pointer;
+    width: 105px;
+    height: 38px;
+    font-weight: 700;
+    background-color: $userOrange;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid $userOrange;
+    box-sizing: border-box;
+    border-radius: 2px;
+    float: right;
+    transition: all .5s;
+    &:hover {
+        color: $userOrange;
+        background-color: #fff;
+        border-color: $userOrange;
+    }
+}
+
+.user__rate {
+    position: absolute;
+    bottom: $userPadding;
+    left: $userPadding;
+    font-size: 16px;
+    color: #7a7a7a;
+}
+
+.user__rate-num {
+    color: $userGreen;
+    font-weight: 800;
+    &:after {
+        content: '%';
+    }
+}
+
+.user__rate-progress {
+    display: block;
+    width: 123px;
+    height: 10px;
+    background-color: #d9d9d9;
+    border-radius: 2px;
+    overflow: hidden;
+    .value {
+        display: block;
+        height: 100%;
+        background-color: $userGreen;
+    }
+}
+
+
+/*
+shop
+*/
+
+.shop {
+    height: auto;
+    text-align: center;
+    padding: 70px 0;
+    background: url(../img/bg-shop.png);
+}
+
+.shop__item-wrap {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.shop__item {
+    vertical-align: top;
+    position: relative;
+    width: 235px;
+    height: 350px;
+    display: inline-block;
+    background-color: #f2f5f8;
+    border-radius: 10px;
+    margin: 10px 15px;
+    &:after {
+        content: url(../img/shopItemShadow.png);
+        position: absolute;
+        top: 100%;
+        left: 11px;
+    }
+}
+
+.shop__item__image {
+    width: 100%;
+}
+
+.shop__item__title {
+    color: #2757b0;
+    font-size: 18px;
+    margin: 10px 0;
+    span {
+        display: block;
+    }
+}
+
+.shop__item__price {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    margin: 0;
+    font-weight: 900;
+    font-size: 22px;
+    &:after {
+        content: ' грн';
+        font-size: 14px;
+    }
+}
+
+
+/*
+footer
+*/
+
+footer {
+    background-color: $footerMain;
+    color: $footerText;
+    text-align: center;
+    padding-bottom: 20px;
+    &>div {
+        padding: 50px 55px 60px 60px;
+        width: 130px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        &:nth-child(2) {
+            width: auto;
+            border: 1px solid #222121;
+            border-top: none;
+            border-bottom: none;
+        }
+    }
+}
+
+.footer__nav {
+    list-style-type: none;
+    a {
+        color: #ececec;
+        font-size: 14px;
+        line-height: 2;
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.bank-cards__item {
+    background: url(../img/bankCards.png) no-repeat;
+    border: 1px solid $footerText;
+    display: inline-block;
+    width: 55px;
+    height: 34px;
+    border-radius: 2px;
+    margin: $footerItems;
+    transition: background-color .5s;
+    &:hover {
+        background-color: $footerText;
+    }
+    &.m-card {
+        background-position: 6px center;
+    }
+    &.visa {
+        background-position: -61px center;
+    }
+    &.discover {
+        background-position: -126px center;
+    }
+    &.a-exp {
+        background-position: -192px center;
+    }
+    &.paypal {
+        background-position: -258px center;
+    }
+}
+
+.social__item {
+    background: $footerText url(../img/social.png) no-repeat;
+    width: 35px;
+    height: 35px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: $footerItems;
+    &.fb {
+        background-position: 11px center;
+    }
+    &.tw {
+        background-position: -36px center;
+    }
+    &.in {
+        background-position: -80px center;
+    }
+}
+
+.footer__title {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+@media (max-width: 1280px) {
+    .slider__nav {
+        top: 100%;
+        left: 5 0%;
+        margin-left: -$userWidth;
+        width: $userWidth * 2;
+    }
+    .user {
+        margin: 0;
+        opacity: 1;
+        &:last-child {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    footer>div {
+        padding: 20px;
+    }
+    .slider__nav {
+        top: 100%;
+        left: 50%;
+        margin-left: -$userWidth / 2;
+        width: $userWidth;
+    }
+    .user {
+        margin: 0;
+        opacity: 1;
+        display: none;
+        &:first-child {
+            display: inline-block;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    footer>div {
+        padding: 5px 0;
+        width: auto;
+        display: block;
+        text-align: center;
+        &:nth-child(2) {
+            border: 1px solid #222121;
+            border-left: none;
+            border-right: none;
+        }
+    }
+    .footer__nav a {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+//
+//@media (max-width: 640px) {}
+//
+//@media (max-width: 480px) {}
