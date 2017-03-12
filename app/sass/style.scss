@@ -65,11 +65,13 @@ slider
         height: 28px;
         border: 0 none;
         border-radius: 5px;
-        background: #fff url(../img/slider-arrows.png) 8px center no-repeat;
+        background: #fff url(../img/arrow.svg) center no-repeat;
+        background-size: 14px;
         transition: opacity .5s;
         outline: none;
+        will-change: transform;
         &.slider__next {
-            background-position: -23px center;
+            transform: rotateY(180deg);
         }
         &:hover {
             opacity: 1;
@@ -124,6 +126,7 @@ slider
 }
 
 .user__stars img {
+    width: 13px;
     opacity: .5;
     &.active {
         opacity: 1;

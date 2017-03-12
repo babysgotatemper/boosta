@@ -91,12 +91,15 @@ slider
     border: 0 none;
     -webkit-border-radius: 5px;
             border-radius: 5px;
-    background: #fff url(../img/slider-arrows.png) 8px center no-repeat;
+    background: #fff url(../img/arrow.svg) center no-repeat;
+    background-size: 14px;
     -webkit-transition: opacity .5s;
     transition: opacity .5s;
-    outline: none; }
+    outline: none;
+    will-change: transform; }
     .slider__nav button.slider__next {
-      background-position: -23px center; }
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
     .slider__nav button:hover {
       opacity: 1; }
 
@@ -145,6 +148,7 @@ slider
   color: #009688; }
 
 .user__stars img {
+  width: 13px;
   opacity: .5; }
   .user__stars img.active {
     opacity: 1; }
